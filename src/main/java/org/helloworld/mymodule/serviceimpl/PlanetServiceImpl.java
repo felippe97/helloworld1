@@ -48,8 +48,11 @@ public class PlanetServiceImpl extends PlanetServiceImplBase {
 	}
 
 	public PlanetDTO save(ServiceContext ctx, PlanetDTO planet) {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("save not implemented");
+		List<ConditionalCriteria> criteria = ConditionalCriteriaBuilder.criteriaFor(PlanetDTO.class)
+				.withProperty(PlanetDTOProperties.name()).eq(planet)
+				.build();
+
+		return null;
 	}
 
 	public void delete(ServiceContext ctx, PlanetDTO planet) {
