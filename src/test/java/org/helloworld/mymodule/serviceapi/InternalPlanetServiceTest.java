@@ -28,6 +28,12 @@ public class InternalPlanetServiceTest extends AbstractDbUnitJpaTests implements
 	}
 
 	@Test
+	public void testFindByCondition() throws Exception {
+		// TODO Auto-generated method stub
+		fail("testFindByCondition not implemented");
+	}
+
+	@Test
 	public void testSave() throws Exception {
 		// TODO Auto-generated method stub
 		fail("testSave not implemented");
