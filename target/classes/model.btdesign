@@ -1,0 +1,69 @@
+Application MyApp {
+    basePackage= org.helloworld
+
+    Module mymodule {
+
+ 	    Resource FrontResource {
+			String front return="front/overview";
+	    }
+	    Resource HelloWorldResource {
+    String hello(String msg, ModelMap modelMap) return="helloworld/hello";
+}
+Resource PlanetResource {
+    
+    show => PlanetService.findById;
+    String createForm;
+    create => PlanetService.save;
+    updateForm;
+    update => PlanetService.save;
+    delete => PlanetService.delete;
+    showAll => PlanetService.findAll;
+    filter(String value) => PlanetService.findAllMatching; 
+}
+DataTransferObject PlanetForm {
+    String name
+    int diameter
+    IDTYPE id
+    Long version
+}
+
+ 
+Service PlanetService {
+    inject @InternalPlanetService
+     
+    @PlanetDTO findById(IDTYPE id) throws PlanetNotFoundException;
+    List<@PlanetDTO> findAll;
+    @PlanetDTO save(@PlanetDTO planet);
+    delete(@PlanetDTO planet);
+    List<@PlanetDTO> findAllMatching(String value);
+}
+ 
+DataTransferObject PlanetDTO {
+    String name
+    int diameter
+    IDTYPE id
+    Long version
+    
+}
+ 
+Service InternalPlanetService {
+    findById => PlanetRepository.findById;
+    findAll => PlanetRepository.findAll;
+    save => PlanetRepository.save;
+    delete => PlanetRepository.delete;
+}
+ 
+Entity Planet {
+    String name
+    int diameter
+    Repository PlanetRepository {
+        findById;
+        save;
+        delete;
+        findAll;
+        findByCondition;
+    }
+}
+	}
+
+}
