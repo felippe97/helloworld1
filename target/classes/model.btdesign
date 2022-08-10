@@ -49,11 +49,14 @@ DataTransferObject PlanetDTO {
 Service InternalPlanetService {
     findById => PlanetRepository.findById;
     findAll => PlanetRepository.findAll;
+    findByCondition => PlanetRepository.findByCondition;
     save => PlanetRepository.save;
     delete => PlanetRepository.delete;
 }
  
 Entity Planet {
+	scaffold
+
     String name
     int diameter
     Repository PlanetRepository {
