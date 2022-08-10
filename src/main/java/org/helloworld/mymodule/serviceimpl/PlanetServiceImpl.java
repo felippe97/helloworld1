@@ -35,7 +35,7 @@ public class PlanetServiceImpl extends PlanetServiceImplBase {
 				.withProperty(PlanetDTOProperties.id()).eq(id)
 				.build();
 
-		return findByCondition(criteria);
+		Planet planet = getInternalPlanetService().findById(ctx, id);
 	}
 
 	public List<PlanetDTO> findAll(ServiceContext ctx) {
