@@ -9,6 +9,8 @@ public interface InternalPlanetServiceTestBase {
 
 	public void testFindAll() throws Exception;
 
+	public void testFindByCondition() throws Exception;
+
 	public void testSave() throws Exception;
 
 	public void testDelete() throws Exception;
