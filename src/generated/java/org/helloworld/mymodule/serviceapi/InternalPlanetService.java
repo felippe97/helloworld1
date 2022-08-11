@@ -17,6 +17,7 @@ public interface InternalPlanetService {
 
 	public List<Planet> findAll(ServiceContext ctx);
 
+
 	public List<Planet> findByCondition(ServiceContext ctx, List<ConditionalCriteria> condition);
 
 	public Planet save(ServiceContext ctx, Planet entity);
