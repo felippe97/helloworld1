@@ -36,6 +36,9 @@ public class PlanetServiceImpl extends PlanetServiceImplBase {
 				.build();
 
 		Planet planet = getInternalPlanetService().findById(ctx, id);
+		PlanetDTO planetDTO = new PlanetDTO();
+		planetDTO.setId(planet.getId());
+		return planetDTO;
 	}
 
 	public List<PlanetDTO> findAll(ServiceContext ctx) {
@@ -48,14 +51,31 @@ public class PlanetServiceImpl extends PlanetServiceImplBase {
 	}
 
 	public PlanetDTO save(ServiceContext ctx, PlanetDTO planet) {
-		List<ConditionalCriteria> criteria = ConditionalCriteriaBuilder.criteriaFor(PlanetDTO.class)
-				.withProperty(PlanetDTOProperties.name()).eq(planet)
-				.build();
-
-		return null;
+Planet p = new Planet();
+		
+		p.setName(planet.getName());
+		p.setDiameter(planet.getDiameter());
+		
+		try {
+			
+			planetRepository.save(p);
+			
+		} catch (Exception e) {
+			
+			System.out.println("Bad request");
+			
+		}
+		
+		
+		planet.setId(planet.getId());
+		
+		return planet;
 	}
-
+	
 	public void delete(ServiceContext ctx, PlanetDTO planet) {
+		Planet p = new Planet();
+	
+		planetRepository.delete(p);
 		
 	}
 
@@ -63,8 +83,8 @@ public class PlanetServiceImpl extends PlanetServiceImplBase {
 		List<ConditionalCriteria> criteria = ConditionalCriteriaBuilder.criteriaFor(PlanetDTO.class)
 				.withProperty(PlanetDTOProperties.version()).eq(value)
 				.build();
+		return null;
 
-		return findByCondition(criteria);
 	}
 
-}
+} 
