@@ -1,5 +1,6 @@
 package org.helloworld.mymodule.serviceimpl;
 
+
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -10,10 +11,14 @@ import org.helloworld.mymodule.domain.PlanetRepository;
 import org.helloworld.mymodule.exception.PlanetNotFoundException;
 import org.helloworld.mymodule.serviceapi.PlanetDTO;
 import org.helloworld.mymodule.serviceapi.PlanetDTOProperties;
+
 import org.sculptor.framework.accessapi.ConditionalCriteria;
 import org.sculptor.framework.accessapi.ConditionalCriteriaBuilder;
 import org.sculptor.framework.context.ServiceContext;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Service;
 
 
@@ -23,7 +28,8 @@ import org.springframework.stereotype.Service;
 @Service("planetService")
 public class PlanetServiceImpl extends PlanetServiceImplBase {
 
-    
+	@Autowired
+    JdbcTemplate template;
 	 @Autowired
 	    PlanetRepository planetRepository;
 	public PlanetServiceImpl() {
@@ -80,10 +86,9 @@ Planet p = new Planet();
 	}
 
 	public List<PlanetDTO> findAllMatching(ServiceContext ctx, String value) {
-		List<ConditionalCriteria> criteria = ConditionalCriteriaBuilder.criteriaFor(PlanetDTO.class)
-				.withProperty(PlanetDTOProperties.version()).eq(value)
-				.build();
 		return null;
+	
+		
 
 	}
 
