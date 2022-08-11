@@ -1,11 +1,15 @@
 package org.helloworld.mymodule.serviceapi;
 
-import org.helloworld.mymodule.serviceapi.PlanetService;
+
+
 import org.junit.Test;
+
 import org.sculptor.framework.test.AbstractDbUnitJpaTests;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import static org.junit.Assert.*;
+
+import java.util.List;
 
 /**
  * Spring based transactional test with DbUnit support.
@@ -17,31 +21,39 @@ public class PlanetServiceTest extends AbstractDbUnitJpaTests implements PlanetS
 
 	@Test
 	public void testFindById() throws Exception {
-		// TODO Auto-generated method stub
-		fail("testFindById not implemented");
+		PlanetDTO planet = planetService.findById(getServiceContext(), 14L);
+		assertNotNull(planet);
 	}
 
 	@Test
 	public void testFindAll() throws Exception {
-		// TODO Auto-generated method stub
-		fail("testFindAll not implemented");
+	List<PlanetDTO> planet = planetService.findAll(getServiceContext());
+	assertNotNull(planet);
 	}
 
 	@Test
 	public void testSave() throws Exception {
-		// TODO Auto-generated method stub
-		fail("testSave not implemented");
+		PlanetDTO planetDTO = planetService.findById(getServiceContext(), 14L);
+		assertNotNull(planetDTO);
+	planetDTO.setName("Zem");
+	planetService.save(getServiceContext(), planetDTO);
+	PlanetDTO planetDTO2 = planetService.findById(getServiceContext(), 14L);
+	assertEquals("Zem", planetDTO2.getName());
+		
 	}
 
 	@Test
 	public void testDelete() throws Exception {
-		// TODO Auto-generated method stub
-		fail("testDelete not implemented");
+		int before = countRowsInTable(PlanetDTO.class);
+		PlanetDTO planet = planetService.findById(getServiceContext(), 14L);
+		assertNotNull(planet);
+		planetService.delete(getServiceContext(), planet);
+		assertEquals(before - 1, countRowsInTable(PlanetDTO.class));
 	}
 
 	@Test
 	public void testFindAllMatching() throws Exception {
-		// TODO Auto-generated method stub
-		fail("testFindAllMatching not implemented");
+		List<PlanetDTO> planetDTO = planetService.findAllMatching(getServiceContext(), "Zem");
+		assertNotNull(planetDTO);
 	}
 }
