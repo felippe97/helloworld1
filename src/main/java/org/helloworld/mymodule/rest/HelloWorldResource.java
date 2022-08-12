@@ -17,10 +17,9 @@ public class HelloWorldResource extends HelloWorldResourceBase {
 
 	@RequestMapping(value = "/helloWorld", method = RequestMethod.GET)
 	public String hello(@RequestParam("msg") String msg, ModelMap modelMap) {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("hello not implemented");
-		// modelMap.addAttribute("result", result);
-		// return "helloworld/hello";
+		
+		 modelMap.addAttribute("result", msg);
+		 return "helloworld/hello";
 	}
 
 }
