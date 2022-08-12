@@ -1,9 +1,9 @@
 package org.helloworld.mymodule.serviceapi;
 
 import org.helloworld.mymodule.domain.Planet;
-import org.helloworld.mymodule.serviceapi.InternalPlanetService;
+
 import org.junit.Test;
-import org.sculptor.framework.accessapi.ConditionalCriteria;
+
 import org.sculptor.framework.test.AbstractDbUnitJpaTests;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -31,11 +31,7 @@ public class InternalPlanetServiceTest extends AbstractDbUnitJpaTests implements
 		assertNotNull(planet);
 	}
 
-	@Test
-	public void testFindByCondition() throws Exception {
-		List<Planet> planet = internalPlanetService.findByCondition(getServiceContext(), "condition");
-		assertNotNull(planet);
-	}
+	
 
 	@Test
 	public void testSave() throws Exception {
