@@ -1,7 +1,7 @@
 package org.helloworld.mymodule.domain;
 
 import java.util.List;
-
+import org.helloworld.mymodule.domain.Planet;
 import org.helloworld.mymodule.exception.PlanetNotFoundException;
 
 /**
