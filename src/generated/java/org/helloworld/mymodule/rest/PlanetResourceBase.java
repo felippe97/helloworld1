@@ -88,13 +88,6 @@ public abstract class PlanetResourceBase {
 		return "planet/showlist";
 	}
 
-	@RequestMapping(value = "/planet/filter/{value}", method = RequestMethod.GET)
-	public String filter(@PathVariable("value") String value, ModelMap modelMap) {
-		List<PlanetDTO> result = planetService.findAllMatching(serviceContext(), value);
-		modelMap.addAttribute("result", result);
-		return "planet/showlist";
-	}
-
 	/*
 	 * @org.springframework.web.bind.annotation.RequestMapping(value = "/planet/form",
 	 * method=org.springframework.web.bind.annotation.RequestMethod.GET) public String createForm(org.springframework.ui.ModelMap
