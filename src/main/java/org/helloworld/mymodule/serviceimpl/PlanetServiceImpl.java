@@ -6,19 +6,14 @@ import java.util.Iterator;
 import java.util.List;
 
 import org.helloworld.mymodule.domain.Planet;
-import org.helloworld.mymodule.domain.PlanetProperties;
 import org.helloworld.mymodule.domain.PlanetRepository;
 import org.helloworld.mymodule.exception.PlanetNotFoundException;
 import org.helloworld.mymodule.serviceapi.PlanetDTO;
-import org.helloworld.mymodule.serviceapi.PlanetDTOProperties;
-
-import org.sculptor.framework.accessapi.ConditionalCriteria;
-import org.sculptor.framework.accessapi.ConditionalCriteriaBuilder;
 import org.sculptor.framework.context.ServiceContext;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.BeanPropertyRowMapper;
+
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.RowMapper;
+
 import org.springframework.stereotype.Service;
 
 
@@ -37,9 +32,7 @@ public class PlanetServiceImpl extends PlanetServiceImplBase {
 
 	public PlanetDTO findById(ServiceContext ctx, Long id) throws PlanetNotFoundException {
 		
-		List<ConditionalCriteria> criteria = ConditionalCriteriaBuilder.criteriaFor(PlanetDTO.class)
-				.withProperty(PlanetDTOProperties.id()).eq(id)
-				.build();
+	
 
 		Planet planet = getInternalPlanetService().findById(ctx, id);
 		PlanetDTO planetDTO = new PlanetDTO();
@@ -57,21 +50,13 @@ public class PlanetServiceImpl extends PlanetServiceImplBase {
 	}
 
 	public PlanetDTO save(ServiceContext ctx, PlanetDTO planet) {
-Planet p = new Planet();
+		Planet p = new Planet();
 		
 		p.setName(planet.getName());
 		p.setDiameter(planet.getDiameter());
 		
-		try {
 			
 			planetRepository.save(p);
-			
-		} catch (Exception e) {
-			
-			System.out.println("Bad request");
-			
-		}
-		
 		
 		planet.setId(planet.getId());
 		
@@ -80,16 +65,14 @@ Planet p = new Planet();
 	
 	public void delete(ServiceContext ctx, PlanetDTO planet) {
 		Planet p = new Planet();
-	
+		p.setName(planet.getName());
+		p.setDiameter(planet.getDiameter());
 		planetRepository.delete(p);
 		
 	}
 
-	public List<PlanetDTO> findAllMatching(ServiceContext ctx, String value) {
-		return null;
 	
-		
 
-	}
+	
 
 } 
