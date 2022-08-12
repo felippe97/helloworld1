@@ -2,7 +2,7 @@ package org.helloworld.mymodule.domain;
 
 import java.util.Date;
 import javax.xml.bind.annotation.XmlElement;
-import org.helloworld.mymodule.domain.Planet;
+
 
 /**
  * Builder for Planet class.
