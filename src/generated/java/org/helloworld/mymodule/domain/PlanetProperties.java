@@ -1,6 +1,6 @@
 package org.helloworld.mymodule.domain;
 
-
+import org.helloworld.mymodule.domain.Planet;
 import org.sculptor.framework.domain.LeafProperty;
 import org.sculptor.framework.domain.PropertiesCollection;
 import org.sculptor.framework.domain.Property;
