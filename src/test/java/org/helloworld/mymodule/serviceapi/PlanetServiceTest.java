@@ -2,6 +2,7 @@ package org.helloworld.mymodule.serviceapi;
 
 
 
+import org.junit.Before;
 import org.junit.Test;
 
 import org.sculptor.framework.test.AbstractDbUnitJpaTests;
@@ -11,6 +12,8 @@ import static org.junit.Assert.*;
 
 import java.util.List;
 
+import javax.sql.DataSource;
+
 /**
  * Spring based transactional test with DbUnit support.
  */
@@ -18,7 +21,13 @@ public class PlanetServiceTest extends AbstractDbUnitJpaTests implements PlanetS
 
 	@Autowired
 	protected PlanetService planetService;
+	@Autowired
+	DataSource source;
 
+	@Before
+    public void setDataSource() {
+        super.setDataSource(source);
+    }
 	@Test
 	public void testFindById() throws Exception {
 		PlanetDTO planet = planetService.findById(getServiceContext(), 14L);
