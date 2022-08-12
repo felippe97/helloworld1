@@ -1,9 +1,8 @@
 package org.helloworld.mymodule.domain;
 
 import java.util.List;
-import org.helloworld.mymodule.domain.Planet;
+
 import org.helloworld.mymodule.exception.PlanetNotFoundException;
-import org.sculptor.framework.accessapi.ConditionalCriteria;
 
 /**
  * Generated interface for Repository for Planet
@@ -19,7 +18,5 @@ public interface PlanetRepository {
 	public void delete(Planet entity);
 
 	public List<Planet> findAll();
-
-	public List<Planet> findByCondition(List<ConditionalCriteria> condition);
 
 }
