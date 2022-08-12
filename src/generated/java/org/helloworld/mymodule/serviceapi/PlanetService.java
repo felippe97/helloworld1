@@ -2,7 +2,7 @@ package org.helloworld.mymodule.serviceapi;
 
 import java.util.List;
 import org.helloworld.mymodule.exception.PlanetNotFoundException;
-import org.helloworld.mymodule.serviceapi.PlanetDTO;
+
 import org.sculptor.framework.context.ServiceContext;
 
 /**
@@ -19,7 +19,5 @@ public interface PlanetService {
 	public PlanetDTO save(ServiceContext ctx, PlanetDTO planet);
 
 	public void delete(ServiceContext ctx, PlanetDTO planet);
-
-	public List<PlanetDTO> findAllMatching(ServiceContext ctx, String value);
 
 }
