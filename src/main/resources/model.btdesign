@@ -18,6 +18,9 @@ Resource PlanetResource {
     update => PlanetService.save;
     delete => PlanetService.delete;
     showAll => PlanetService.findAll;
+  
+    String updateForm throws PlanetNotFoundException;
+    update(@PlanetForm planetForm) throws PlanetNotFoundException; 
     
 }
 DataTransferObject PlanetForm {
