@@ -5,7 +5,6 @@ import org.helloworld.mymodule.domain.Planet;
 import org.helloworld.mymodule.domain.PlanetRepository;
 import org.helloworld.mymodule.exception.PlanetNotFoundException;
 import org.helloworld.mymodule.serviceapi.InternalPlanetService;
-import org.sculptor.framework.accessapi.ConditionalCriteria;
 import org.sculptor.framework.context.ServiceContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -38,13 +37,6 @@ public class InternalPlanetServiceImpl implements InternalPlanetService {
 	 */
 	public List<Planet> findAll(ServiceContext ctx) {
 		return planetRepository.findAll();
-	}
-
-	/**
-	 * Delegates to {@link org.helloworld.mymodule.domain.PlanetRepository#findByCondition}
-	 */
-	public List<Planet> findByCondition(ServiceContext ctx, List<ConditionalCriteria> condition) {
-		return planetRepository.findByCondition(condition);
 	}
 
 	/**
