@@ -1,5 +1,5 @@
-#Sculptor created the following 63 files
-#Fri Aug 12 12:25:48 CEST 2022
+#Sculptor created the following 62 files
+#Fri Aug 12 14:55:02 CEST 2022
 src/generated/java/org/helloworld/mymodule/domain/Planet.java=453869284f6156fef89a8437417643cc
 src/generated/java/org/helloworld/mymodule/domain/PlanetBuilder.java=1893507581df166311e61ad2fe30d529
 src/generated/java/org/helloworld/mymodule/domain/PlanetDTOBuilder.java=b45e1247b029ddb6be55356dd03e71d6
@@ -10,11 +10,11 @@ src/generated/java/org/helloworld/mymodule/exception/PlanetNotFoundException.jav
 src/generated/java/org/helloworld/mymodule/repositoryimpl/PlanetRepositoryImpl.java=87f94a715c240f2db859e1faa043fe37
 src/generated/java/org/helloworld/mymodule/rest/FrontResourceBase.java=d5a4bcbeb1c719600daec393e9855f7a
 src/generated/java/org/helloworld/mymodule/rest/HelloWorldResourceBase.java=964102561242fb659dfefa96a3551170
-src/generated/java/org/helloworld/mymodule/rest/PlanetResourceBase.java=50f1b20183965f5d12eb0de0b5bc1ebb
+src/generated/java/org/helloworld/mymodule/rest/PlanetResourceBase.java=da9901e42e10a5e6a2e4e00952ad4367
 src/generated/java/org/helloworld/mymodule/serviceapi/InternalPlanetService.java=40b0b88c66522824507311638d155383
 src/generated/java/org/helloworld/mymodule/serviceapi/PlanetDTO.java=a9fd3e9f1c5529148839d80f2b630ee9
 src/generated/java/org/helloworld/mymodule/serviceapi/PlanetDTOProperties.java=193c5b6970d298dcd322cdd1b4ace67a
-src/generated/java/org/helloworld/mymodule/serviceapi/PlanetForm.java=f0c00d9f07efdf5b97580b30969a4d74
+src/generated/java/org/helloworld/mymodule/serviceapi/PlanetForm.java=41639fd8364ae67522b453bb8cea02b9
 src/generated/java/org/helloworld/mymodule/serviceapi/PlanetFormProperties.java=f82016da3f81c31bdd7e3f2fde203b46
 src/generated/java/org/helloworld/mymodule/serviceapi/PlanetService.java=119a17e632e25f72ade3c67e75264c70
 src/generated/java/org/helloworld/mymodule/serviceimpl/InternalPlanetServiceImpl.java=632a06cf316b59a87e2b3a30ab5dcf6b
@@ -27,7 +27,6 @@ src/generated/resources/beanRefContext.xml=cecb8914ac99079a9276d8b1be92915f
 src/generated/resources/generated-spring.properties=34497b0acda1fddeada5859707dc0721
 src/generated/resources/pub-sub.xml=20f31012dbc564ec6d63e4c226fa09e2
 src/main/java/org/helloworld/mymodule/rest/FrontResource.java=73cf19c216f929d39eb3ff851fa7ce02
-src/main/java/org/helloworld/mymodule/rest/HelloWorldResource.java=c612f33579b7899817d247a9ce627d0b
 src/main/resources/ehcache.xml=e12308d93a38e0927b54a1f119f38774
 src/main/resources/logback.xml=fb9670b146f0b65352745e97507ab7ee
 src/main/resources/more.xml=c397f379d4a9f7e62db909bf19878183
