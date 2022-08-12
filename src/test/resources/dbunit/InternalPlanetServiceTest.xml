@@ -1,4 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <dataset>
-	<PLANET /> 
+	<PLANET id="14L" NAME="Zem" DIAMETER="188" UUID="US" CREATEDDATE="86400" 
+	CREATEDBY="Jano" LASTUPDATED="86455" LASTUPDATEDBY="Jano" versin="1L"/> 
 </dataset>
