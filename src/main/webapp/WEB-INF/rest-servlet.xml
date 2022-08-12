@@ -45,8 +45,7 @@
 <bean id="xstreamMarshaller" class="org.springframework.oxm.xstream.XStreamMarshaller">
 	<property name="autodetectAnnotations" value="true" />
 </bean>
-<!-- Instead of xstreamMarshaller you can use the following jaxb2Marshaller -->
-<!-- 
+
 <bean id="jaxb2Marshaller" class="org.springframework.oxm.jaxb.Jaxb2Marshaller">
 	<property name="classesToBeBound">
 		<list>
@@ -54,10 +53,7 @@
 		</list>
 	</property>
 </bean>
--->
 
-<!-- These message converters are used for converting json or xml to java 
-	obj for @RequestBody parameters -->
 <bean
 	class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
 	<property name="messageConverters">
@@ -76,3 +72,5 @@
 	class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter" />
 
 </beans>
+
+
