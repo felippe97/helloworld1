@@ -21,7 +21,6 @@ subgraph clustermymodule {
 		<table border="0" cellspacing="0" cellpadding="1">	
 	<tr><td align="left">findById</td></tr>			
 	<tr><td align="left">findAll</td></tr>			
-	<tr><td align="left">findByCondition</td></tr>			
 	<tr><td align="left">save</td></tr>			
 	<tr><td align="left">delete</td></tr>			
 		</table>		
@@ -39,7 +38,6 @@ subgraph clustermymodule {
 	<tr><td align="left">findAll</td></tr>			
 	<tr><td align="left">save</td></tr>			
 	<tr><td align="left">delete</td></tr>			
-	<tr><td align="left">findAllMatching</td></tr>			
 		</table>		
 	</td></tr>
 	</table>>, fontname="arial", fontcolor="black", fontsize=9.0];
