@@ -51,9 +51,5 @@ public class PlanetServiceTest extends AbstractDbUnitJpaTests implements PlanetS
 		assertEquals(before - 1, countRowsInTable(PlanetDTO.class));
 	}
 
-	@Test
-	public void testFindAllMatching() throws Exception {
-		List<PlanetDTO> planetDTO = planetService.findAllMatching(getServiceContext(), "Zem");
-		assertNotNull(planetDTO);
-	}
+	
 }
