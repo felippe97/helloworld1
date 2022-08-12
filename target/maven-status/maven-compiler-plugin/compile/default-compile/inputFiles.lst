@@ -8,9 +8,12 @@ C:\Users\filip\helloworld1\src\generated\java\org\helloworld\mymodule\serviceapi
 C:\Users\filip\helloworld1\src\generated\java\org\helloworld\mymodule\rest\HelloWorldResourceBase.java
 C:\Users\filip\helloworld1\src\generated\java\org\helloworld\mymodule\serviceapi\PlanetDTO.java
 C:\Users\filip\helloworld1\src\generated\java\org\helloworld\mymodule\rest\FrontResourceBase.java
+C:\Users\filip\helloworld1\src\generated\java\org\helloworld\mymodule\serviceapi\PlanetFormProperties.java
 C:\Users\filip\helloworld1\src\generated\java\org\helloworld\mymodule\serviceimpl\InternalPlanetServiceImpl.java
 C:\Users\filip\helloworld1\src\generated\java\org\helloworld\mymodule\serviceapi\InternalPlanetService.java
+C:\Users\filip\helloworld1\src\generated\java\org\helloworld\mymodule\serviceapi\PlanetForm.java
 C:\Users\filip\helloworld1\src\generated\java\org\helloworld\mymodule\repositoryimpl\PlanetRepositoryImpl.java
+C:\Users\filip\helloworld1\src\generated\java\org\helloworld\mymodule\domain\PlanetFormBuilder.java
 C:\Users\filip\helloworld1\src\main\java\org\helloworld\mymodule\rest\HelloWorldResource.java
 C:\Users\filip\helloworld1\src\generated\java\org\helloworld\mymodule\domain\PlanetRepository.java
 C:\Users\filip\helloworld1\src\generated\java\org\helloworld\mymodule\exception\PlanetNotFoundException.java
