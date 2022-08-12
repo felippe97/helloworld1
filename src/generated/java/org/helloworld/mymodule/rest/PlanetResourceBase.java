@@ -7,6 +7,7 @@ import java.util.List;
 import javax.servlet.http.HttpServletResponse;
 import org.helloworld.mymodule.exception.PlanetNotFoundException;
 import org.helloworld.mymodule.serviceapi.PlanetDTO;
+import org.helloworld.mymodule.serviceapi.PlanetForm;
 import org.helloworld.mymodule.serviceapi.PlanetService;
 import org.sculptor.framework.context.ServiceContext;
 import org.sculptor.framework.context.ServiceContextStore;
@@ -103,6 +104,15 @@ public abstract class PlanetResourceBase {
 	 */
 	public abstract String updateForm(Long id, ModelMap modelMap) throws Exception;
 
+	/*
+	 * @org.springframework.web.bind.annotation.RequestMapping(value = "/planet/{id}/form",
+	 * method=org.springframework.web.bind.annotation.RequestMethod.GET) public String
+	 * updateForm(@org.springframework.web.bind.annotation.PathVariable("id") Long id , org.springframework.ui.ModelMap modelMap )
+	 * throws org.helloworld.mymodule.exception.PlanetNotFoundException
+	 */
+	
+	public abstract String update(PlanetForm planetForm) throws PlanetNotFoundException;
+
 	/**
 	 * This method is needed for form data POST. Delegates to {@link #create}
 	 */
@@ -117,6 +127,14 @@ public abstract class PlanetResourceBase {
 	@RequestMapping(value = "/planet", method = RequestMethod.PUT, headers = "content-type=application/x-www-form-urlencoded")
 	public String updateFromForm(@ModelAttribute("planet") PlanetDTO planet) {
 		return update(planet);
+	}
+
+	/**
+	 * This method is needed for form data PUT. Delegates to {@link #update}
+	 */
+	@RequestMapping(value = "/planet", method = RequestMethod.PUT, headers = "content-type=application/x-www-form-urlencoded")
+	public String updateFromForm(@ModelAttribute("planetForm") PlanetForm planetForm) throws PlanetNotFoundException {
+		return update(planetForm);
 	}
 
 	@ExceptionHandler
