@@ -18,7 +18,7 @@ Resource PlanetResource {
     update => PlanetService.save;
     delete => PlanetService.delete;
     showAll => PlanetService.findAll;
-    filter(String value) => PlanetService.findAllMatching; 
+    
 }
 DataTransferObject PlanetForm {
     String name
@@ -35,7 +35,7 @@ Service PlanetService {
     List<@PlanetDTO> findAll;
     @PlanetDTO save(@PlanetDTO planet);
     delete(@PlanetDTO planet);
-    List<@PlanetDTO> findAllMatching(String value);
+    
 }
  
 DataTransferObject PlanetDTO {
@@ -49,7 +49,7 @@ DataTransferObject PlanetDTO {
 Service InternalPlanetService {
     findById => PlanetRepository.findById;
     findAll => PlanetRepository.findAll;
-    findByCondition => PlanetRepository.findByCondition;
+    
     save => PlanetRepository.save;
     delete => PlanetRepository.delete;
 }
@@ -64,7 +64,7 @@ Entity Planet {
         save;
         delete;
         findAll;
-        findByCondition;
+      
     }
 }
 	}
