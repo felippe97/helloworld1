@@ -1,7 +1,7 @@
 package org.helloworld.mymodule.serviceapi;
 
 import org.helloworld.mymodule.domain.Planet;
-
+import org.junit.Before;
 import org.junit.Test;
 
 import org.sculptor.framework.test.AbstractDbUnitJpaTests;
@@ -11,6 +11,8 @@ import static org.junit.Assert.*;
 
 import java.util.List;
 
+import javax.sql.DataSource;
+
 /**
  * Spring based transactional test with DbUnit support.
  */
@@ -18,7 +20,13 @@ public class InternalPlanetServiceTest extends AbstractDbUnitJpaTests implements
 
 	@Autowired
 	protected InternalPlanetService internalPlanetService;
+	@Autowired
+	DataSource source;
 
+	@Before
+    public void setDataSource() {
+        super.setDataSource(source);
+    }
 	@Test
 	public void testFindById() throws Exception {
 		Planet planet = internalPlanetService.findById(getServiceContext(), 14L);
