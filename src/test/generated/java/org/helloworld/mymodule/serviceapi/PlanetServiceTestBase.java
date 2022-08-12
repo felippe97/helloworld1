@@ -12,6 +12,4 @@ public interface PlanetServiceTestBase {
 	public void testSave() throws Exception;
 
 	public void testDelete() throws Exception;
-
-	public void testFindAllMatching() throws Exception;
 }
