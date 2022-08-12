@@ -4,11 +4,13 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
 import java.io.Serializable;
 import java.lang.Cloneable;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  * Data transfer object for PlanetForm.
  */
 
+@XmlRootElement(name = "PlanetForm")
 @XStreamAlias("PlanetForm")
 public class PlanetForm implements Serializable, Cloneable {
 	private static final long serialVersionUID = 1L;
