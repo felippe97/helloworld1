@@ -1,6 +1,6 @@
 package org.helloworld.mymodule.serviceapi;
 
-
+import org.helloworld.mymodule.serviceapi.PlanetDTO;
 import org.sculptor.framework.domain.LeafProperty;
 import org.sculptor.framework.domain.PropertiesCollection;
 import org.sculptor.framework.domain.Property;
