@@ -23,8 +23,7 @@ import org.springframework.stereotype.Service;
 @Service("planetService")
 public class PlanetServiceImpl extends PlanetServiceImplBase {
 
-	@Autowired
-    JdbcTemplate template;
+	
 	 @Autowired
 	    PlanetRepository planetRepository;
 	public PlanetServiceImpl() {
