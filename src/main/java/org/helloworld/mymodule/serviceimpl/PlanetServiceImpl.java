@@ -12,7 +12,6 @@ import org.helloworld.mymodule.serviceapi.PlanetDTO;
 import org.sculptor.framework.context.ServiceContext;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import org.springframework.jdbc.core.JdbcTemplate;
 
 import org.springframework.stereotype.Service;
 
@@ -54,8 +53,7 @@ public class PlanetServiceImpl extends PlanetServiceImplBase {
 		p.setName(planet.getName());
 		p.setDiameter(planet.getDiameter());
 		
-			
-			planetRepository.save(p);
+		planetRepository.save(p);
 		
 		planet.setId(planet.getId());
 		
