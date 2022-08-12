@@ -16,8 +16,6 @@ import javax.persistence.TemporalType;
 import javax.persistence.Version;
 import javax.validation.constraints.NotNull;
 import javax.xml.bind.annotation.XmlElement;
-
-import org.sculptor.framework.context.ServiceContext;
 import org.sculptor.framework.domain.AbstractDomainObject;
 import org.sculptor.framework.domain.AuditListener;
 import org.sculptor.framework.domain.Auditable;
@@ -173,7 +171,5 @@ public class Planet extends AbstractDomainObject implements Auditable, Identifia
 	public Object getKey() {
 		return getUuid();
 	}
-
-
 
 }
